@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <RelativeLayout
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_marginTop="8dp"
+        android:layout_height="?attr/actionBarSize">
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:textColor="@color/text_color"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_toStartOf="@id/profile_card"
+            android:layout_centerVertical="true"
+            android:text="Hello,Roshan"/>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/profile_card"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            app:cardCornerRadius="20dp"
+            android:layout_marginEnd="20dp"
+            app:cardElevation="8dp">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/img"/>
+
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@+id/top_bar"
+        android:layout_marginTop="10dp"
+        android:layout_above="@id/bottom_bar">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="26sp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+
+            android:textColor="@color/text_color"
+            android:text="Which movie you are"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="26sp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:textColor="@color/grey_color"
+            android:text="going watch?"
+            />
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/slider_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="54dp"
+            android:paddingEnd="54dp"
+            android:paddingTop="36dp"
+            android:paddingBottom="36dp"/>
+
+    </LinearLayout>
+    <me.ibrahimsn.lib.SmoothBottomBar
+        android:id="@+id/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_alignParentBottom="true"
+        app:iconSize="20dp"
+        app:iconTint="@color/grey_color"
+        app:iconTintActive="@color/text_color"
+        app:indicatorColor="#ECECEC"
+        app:indicatorRadius="10dp"
+        app:menu="@menu/bottom_nav_menu"
+        app:textSize="15sp"
+        app:textColor="@color/text_color"
+
+        />
+</RelativeLayout>
